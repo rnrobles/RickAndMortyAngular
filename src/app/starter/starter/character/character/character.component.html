@@ -1,0 +1,95 @@
+<app-card>
+  <div breadcrumb style="display: flex;">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Character</li>
+  </div>
+
+  <div title> Character</div>
+
+  <div header> Character details</div>
+
+  <div body>
+    <div *ngIf="character">
+
+      <p-tabView>
+        <p-tabPanel header="Details">
+          <div class="row">
+            <div class="col"><img [src]="character.image" alt=""></div>
+            <div class="col">
+
+              <div class="row">
+                <div class="col">
+
+                  <div class="row">
+                    <label for="">id:</label>
+                    <div class="col">{{character.id}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">name:</label>
+                    <div class="col">{{character.name}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">status:</label>
+                    <div class="col">{{character.status}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">species:</label>
+                    <div class="col">{{character.species}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">type:</label>
+                    <div class="col">{{character.type}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">gender:</label>
+                    <div class="col">{{character.gender}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">url:</label>
+                    <div class="col">{{character.url}}</div>
+                  </div>
+
+                  <div class="row">
+                    <label for="">created:</label>
+                    <div class="col">{{character.created | date}}</div>
+                  </div>
+
+                  <div class="row" *ngIf="character.origin">
+                    <label for="">origin:</label>
+                    <div class="col"> <a href=""
+                        [routerLink]="['/location', character.origin.url]">{{character.origin.name }}</a>
+                    </div>
+                  </div>
+
+                  <div class="row" *ngIf="character.location">
+                    <label for="">location:</label>
+                    <div class="col"> <a href=""
+                        [routerLink]="['/location', character.location.url]">{{character.location.name }}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Episodes">
+          <app-episode-list [episodesIds]="character.episode"></app-episode-list>
+        </p-tabPanel>
+      </p-tabView>
+
+
+    </div>
+  </div>
+
+  <div footer>
+    <!--     <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> -->
+  </div>
+</app-card>

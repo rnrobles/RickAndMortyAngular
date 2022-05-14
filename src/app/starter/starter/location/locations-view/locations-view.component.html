@@ -1,0 +1,22 @@
+<app-card>
+  <div breadcrumb style="display: flex;">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Locations</li>
+  </div>
+
+  <div title> Locations</div>
+
+  <div header> Locations list</div>
+
+  <div body>
+
+    <app-location-filters (search)="search($event)"></app-location-filters>
+
+    <app-location-list [locationIds]="ids"></app-location-list>
+  </div>
+
+  <div footer>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</app-card>

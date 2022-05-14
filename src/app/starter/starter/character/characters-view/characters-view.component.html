@@ -1,0 +1,22 @@
+<app-card>
+  <div breadcrumb style="display: flex;">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Character</li>
+  </div>
+
+  <div title> Characters</div>
+
+  <div header> Characters list {{this.from}}</div>
+
+  <div body>
+
+    <app-character-filters (search)="search($event)"></app-character-filters>
+
+    <app-character-list [characterIds]="ids"></app-character-list>
+  </div>
+
+  <div footer>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</app-card>

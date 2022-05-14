@@ -1,0 +1,77 @@
+<p-card>
+
+  <form action="" [formGroup]="form">
+    <div class="row">
+      <div class="col row-filter">
+        <label for="float-input">Name: </label>
+        <input id="float-input" type="text" pInputText formControlName="name" class="component-wide">
+      </div>
+
+      <div class="col row-filter">
+        <label for="float-input">Species:</label>
+        <input id="float-input" type="text" pInputText formControlName="species" class="component-wide">
+      </div>
+
+      <div class="col row-filter">
+        <label for="float-input">type:</label>
+        <input id="float-input" type="text" pInputText formControlName="type" class="component-wide">
+      </div>
+
+      <div class="col row-filter">
+        <label for="float-input">status:</label>
+
+        <p-dropdown [options]="characterStatus" formControlName="status" placeholder="Select a status"
+          optionValue="value" [showClear]="true" styleClass="component-wide">
+        </p-dropdown>
+      </div>
+
+      <div class="col row-filter">
+        <label for="float-input">gender:</label>
+        <p-dropdown [options]="characterGender" formControlName="gender" placeholder="Select a gender"
+          optionValue="value" [showClear]="true" styleClass="component-wide">
+        </p-dropdown>
+      </div>
+    </div>
+
+    <div class="row button-filter">
+      <div class="col-8">
+      </div>
+
+      <div class="col-2">
+        <p-button label="Clear" icon="pi pi-sync" (click)="clearFilter()" styleClass="component-wide"></p-button>
+      </div>
+
+      <div class="col-2">
+        <p-button label="Search" icon="pi pi-search" (click)="searchEvent()" styleClass="component-wide"></p-button>
+      </div>
+    </div>
+
+
+  </form>
+
+
+  <div class="row button-filter">
+    <div class="col row-filter">
+      <label for="float-input">Character Id 1: </label>
+      <input id="float-input" type="text" pInputText class="component-wide" [(ngModel)]="characterId1">
+    </div>
+
+    <div class="col row-filter">
+      <label for="float-input">Character Id 2 </label>
+      <input id="float-input" type="text" pInputText class="component-wide" [(ngModel)]="characterId2">
+    </div>
+
+    <div class="col row-filter">
+      <label for="float-input">Character Id 3 </label>
+      <input id="float-input" type="text" pInputText class="component-wide" [(ngModel)]="characterId3">
+    </div>
+
+    <div class="col row-filter">
+      <label for="float-input">Compare Character:</label>
+      <p-button label="Compare" icon="pi pi-search" [routerLink]="['/characters-compare']"
+        [queryParams]="{ids:[characterId1,characterId2,characterId3]} " styleClass="component-wide"></p-button>
+    </div>
+  </div>
+
+
+</p-card>

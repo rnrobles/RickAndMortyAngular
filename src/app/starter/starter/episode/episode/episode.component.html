@@ -1,0 +1,66 @@
+<app-card>
+  <div breadcrumb style="display: flex">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Episode</li>
+  </div>
+
+  <div title>Episode</div>
+
+  <div header>Episode details</div>
+
+  <div body>
+    <div *ngIf="episode">
+
+      <p-tabView>
+        <p-tabPanel header="Details">
+          <div class="row">
+
+            <div class="col">
+              <div class="row">
+                <label for="">id:</label>
+                <div class="col">{{ episode.id }}</div>
+              </div>
+
+              <div class="row">
+                <label for="">name:</label>
+                <div class="col">{{ episode.name }}</div>
+              </div>
+
+              <div class="row">
+                <label for="">air date:</label>
+                <div class="col">{{ episode.air_date | date }}</div>
+              </div>
+
+              <div class="row">
+                <label for="">episode:</label>
+                <div class="col">{{ episode.episode }}</div>
+              </div>
+
+              <div class="row">
+                <label for="">url:</label>
+                <div class="col">{{ episode.url }}</div>
+              </div>
+
+              <div class="row">
+                <label for="">created:</label>
+                <div class="col">{{ episode.created | date }}</div>
+              </div>
+            </div>
+
+
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Characters">
+          <app-character-list [characterIds]="episode.characters"></app-character-list>
+        </p-tabPanel>
+
+      </p-tabView>
+
+    </div>
+  </div>
+
+  <div footer>
+    <!--  <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> -->
+  </div>
+</app-card>

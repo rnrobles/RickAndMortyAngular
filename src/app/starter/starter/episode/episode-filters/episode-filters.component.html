@@ -1,0 +1,32 @@
+<p-card>
+
+  <form action="" [formGroup]="form">
+    <div class="row">
+      <div class="col row-filter">
+        <label for="float-input">Name: </label>
+        <input id="float-input" type="text" pInputText formControlName="name" class="component-wide">
+      </div>
+
+      <div class="col row-filter">
+        <label for="float-input">Episode:</label>
+        <input id="float-input" type="text" pInputText formControlName="episode" class="component-wide">
+      </div>
+
+    </div>
+
+    <div class="row button-filter">
+      <div class="col-8">
+      </div>
+
+      <div class="col-2">
+        <p-button label="Clear" icon="pi pi-sync" (click)="clearFilter()" styleClass="component-wide"></p-button>
+      </div>
+
+      <div class="col-2">
+        <p-button label="Search" icon="pi pi-search" (click)="searchEvent()" styleClass="component-wide"></p-button>
+      </div>
+    </div>
+
+  </form>
+
+</p-card>
