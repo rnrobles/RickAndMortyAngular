@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION  } from '@angular/core';
+import pkg  from '../../../../../../package.json';
 
 @Component({
   selector: 'app-starter-nav-bar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  public appVersion=""
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit() {
+    this.appVersion = pkg.version
   }
 
 }

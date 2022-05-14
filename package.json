@@ -1,14 +1,20 @@
 {
   "name": "examen-angular",
-  "version": "0.0.0",
+  "version": "0.0.11",
+  "description": "aplicacion de prueba",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "main": "index.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "compodoc": "npx compodoc -p tsconfig.doc.json"
-
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
+    "electron": "ng build && electron . --trace-warnings",
+    "pack": "electron-packager . examen-angular --arch=x64 --out=release/package --ignore=/release --ignore=/documentation --ignore=/installers --ignore=/e2e --ignore=/src --overwrite",
+    "ele": "electron . --trace-warnings",
+    "build:win": "npm run build && npm run pack && node build.js"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +30,9 @@
     "@fortawesome/fontawesome-free": "^6.0.0",
     "admin-lte": "^3.2.0",
     "angular-animations": "^0.11.0",
+    "electron-pos-printer": "^1.2.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.0",
     "primeicons": "^5.0.0",
     "primeng": "^12.2.2",
     "rxjs": "~6.6.0",
@@ -37,6 +46,9 @@
     "@compodoc/compodoc": "^1.1.19",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "electron": "^18.2.3",
+    "electron-packager": "^14.1.0",
+    "electron-winstaller": "^5.0.0",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

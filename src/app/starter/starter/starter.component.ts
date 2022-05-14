@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ElectronService } from '../electron.service';
 
 @Component({
   selector: 'app-starter',
@@ -9,7 +10,9 @@ export class StarterComponent implements OnInit, OnDestroy {
 
   body: HTMLBodyElement = document.getElementsByTagName('body')[0];
 
-  constructor() { }
+  constructor(electronService :ElectronService) {
+    
+   }
 
   ngOnInit() {
     this.body.classList.add('sidebar-mini');
