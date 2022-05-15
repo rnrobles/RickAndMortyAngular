@@ -3,7 +3,7 @@ const { app, BrowserWindow, ipcMain, ipcRenderer, webContents } = require("elect
 const path = require("path");
 const { PosPrinter } = require('electron-pos-printer');
 const electron = require('electron');
-const squirrelUrl = "https://test.rnrobles.online";
+const squirrelUrl = "https://rickandmorty.rnrobles.online";
 
 let appWin;
 

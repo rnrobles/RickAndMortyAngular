@@ -22,9 +22,9 @@ Run `npm run compodoc` to build the documentation in /documentation folder
 
 ## Live version
 
-[https://test.rnrobles.online/](https://test.rnrobles.online/)
+[https://rickandmorty.rnrobles.online/](https://rickandmorty.rnrobles.online/)
 
 
 ## Live Documentation
 
-[https://test.rnrobles.online/doc/](https://test.rnrobles.online/doc/)
+[https://rickandmorty.rnrobles.online/doc/](https://rickandmorty.rnrobles.online/doc/)
