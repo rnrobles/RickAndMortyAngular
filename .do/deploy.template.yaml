@@ -1,0 +1,8 @@
+spec:
+  name: RickAndMortyAngular
+  services:
+  - dockerfile_path: Dockerfile
+    git:
+      branch: test
+      repo_clone_url: https://github.com/rnrobles/RickAndMortyAngular
+    name: RickAndMortyAngular

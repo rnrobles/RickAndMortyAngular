@@ -1,0 +1,8 @@
+name: RickAndMortyAngular
+services:
+- dockerfile_path: Dockerfile
+  github:
+    branch: test
+    deploy_on_push: true
+    repo: rnrobles/RickAndMortyAngular
+  name: RickAndMortyAngular
